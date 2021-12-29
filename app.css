@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: green;
+  font-family: 'Gill Sans', 'sans-serif';
+}
+
+h1 {
+  font-size: 75px;
+  text-transform: uppercase;
+}
+h1:hover {
+  transform: translateY(5px);
+}
+
+.container {
+  padding: 20px;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+#board {
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.box:hover {
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  border-color: green;
+  font-size: 18px;
+  transition: 200ms transform;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}

@@ -2,9 +2,10 @@
 const boxes = document.querySelectorAll('.box');
 
 const gameText = document.getElementById('gameText');
+const restartButton = document.getElementById('restartButton');
 
 // this array will keep track of what boxes are available for a user to select
-const boardSpaces = ['', '', '', '', '', '', '', '', '']
+const boardSpaces = ['', '', '', '', '', '', '', '', ''];
 
 // player 1 will be 'O' and player 2 will be 'X'
 const playerOne_O = "O";
@@ -92,7 +93,18 @@ const playerWins = () => {
   }
 };
 
+const restart = () => {
+  boardSpaces.forEach((space, index) => {
+    boardSpaces[index] = '';
+  })
+  boxes.forEach(box => {
+    box.innerText = '';
+  })
+  gameText.innerText = `Lets Get Started!`;
+  currentPlayer = playerOne_O
+}
 
+restartButton.addEventListener('click', restart)
 
-
+restart();
 createBoardLines();

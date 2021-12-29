@@ -69,7 +69,7 @@ const playerWins = () => {
       return true;
     }
   }
-  //from bottom check up and across
+  // from bottom check up and across
   if (boardSpaces[8] === currentPlayer) {
     if (boardSpaces[2] === currentPlayer && boardSpaces[5] === currentPlayer) {
       console.log(`${currentPlayer} wins on the right`);
@@ -80,7 +80,7 @@ const playerWins = () => {
       return true;
     }
   }
-  //from middle check middle vertical and middle horizontal
+  // from middle check middle vertical and middle horizontal
   if (boardSpaces[4] === currentPlayer) {
     if (boardSpaces[3] === currentPlayer && boardSpaces[5] === currentPlayer) {
       console.log(`${currentPlayer} wins on the middle horizontal`);
@@ -92,7 +92,7 @@ const playerWins = () => {
     }
   }
 };
-
+// for each index in your boardSpaces array set it to empty, set all boxes innerText to empty, and restore gameText
 const restart = () => {
   boardSpaces.forEach((space, index) => {
     boardSpaces[index] = '';
@@ -106,5 +106,6 @@ const restart = () => {
 
 restartButton.addEventListener('click', restart)
 
+// call restart and createBoardLines functions 
 restart();
 createBoardLines();

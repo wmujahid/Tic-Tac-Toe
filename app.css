@@ -9,13 +9,9 @@ h1 {
   font-size: 75px;
   text-transform: uppercase;
 }
-h1:hover {
-  transform: translateY(5px);
-}
 
 .container {
   padding: 20px;
-  height: 130vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +25,10 @@ h1:hover {
   justify-content: center;
   align-items: center;
   color: black;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 #board {

@@ -34,7 +34,10 @@ const createBoardLines = () => {
 const boxClicked = (event) => {
   // refers to the id of the clicked box
   const id = event.target.id
-  console.log(id)
+  if (boardSpaces[id] === '') {
+    boardSpaces[id] = currentPlayer;
+    event.target.innerHTML = currentPlayer
+  }
 }
 
 createBoardLines();

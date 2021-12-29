@@ -27,6 +27,7 @@ h1 {
   color: black;
 }
 
+/* accounts for the border and padding within the height and width of every element */
 * {
   box-sizing: border-box;
 }

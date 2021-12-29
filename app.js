@@ -1,7 +1,15 @@
-// I want to select everything with the class box
+// I want to select everything with the class box and save it to a variable
 const boxes = document.querySelectorAll('.box');
-/* const boxes = [...document.querySelectorAll('.box')]; */
-console.log(boxes)
+
+// this array will keep track of what boxes are available for a user to select
+let boardSpaces = ['', '', '', '', '', '', '', '', '']
+
+// player 1 will be 'O' and player 2 will be 'X'
+const playerOne_O = "O";
+const playerTwo_X = "X";
+
+// starting player will be player 1
+let currentPlayer = playerOne_O;
 
 // Create tic tac toe board lines using the indexes of the boxes array
 const createBoardLines = () => {
@@ -20,7 +28,13 @@ const createBoardLines = () => {
       styleString += `border-top: 3px solid green;`;
     }
     box.style = styleString;
+    box.addEventListener('click', boxClicked)
   });
 };
+const boxClicked = (event) => {
+  // refers to the id of the clicked box
+  const id = event.target.id
+  console.log(id)
+}
 
 createBoardLines();

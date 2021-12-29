@@ -1,18 +1,21 @@
 // I want to select everything with the class box and save it to a variable
-const boxes = document.querySelectorAll('.box');
+// returns an collection but i need it to be an array so i use spread
+const boxes = [...document.getElementsByClassName('box')]
 
-const gameText = document.getElementById('gameText');
-const restartButton = document.getElementById('restartButton');
+const gameText = document.getElementById('gameText')
+const restartButton = document.getElementById('restartButton')
 
 // this array will keep track of what boxes are available for a user to select
-const boardSpaces = ['', '', '', '', '', '', '', '', ''];
+let boardSpaces = ['', '', '', '', '', '', '', '', ''];
 
 // player 1 will be 'O' and player 2 will be 'X'
 const playerOne_O = "O";
 const playerTwo_X = "X";
 
 // starting player will be player 1
-let currentPlayer = playerOne_O;
+let currentPlayer;
+let count = 0
+
 
 // Create tic tac toe board lines using the indexes of the boxes array
 const createBoardLines = () => {
@@ -34,23 +37,24 @@ const createBoardLines = () => {
     box.addEventListener('click', boxClicked)
   });
 };
+
 const boxClicked = (event) => {
   // refers to the id of the clicked box
   const id = event.target.id
-  if (boardSpaces[id] === '') {
+  if (!boardSpaces[id]) {
     boardSpaces[id] = currentPlayer;
     event.target.innerHTML = currentPlayer;
+    count++;
 
     if (playerWins()) {
       gameText.innerText = `${currentPlayer} has won`;
       return;
     }
     // after a box is clicked if the current player is X switch it to O and vice versa
-    if (currentPlayer === playerOne_O) {
-      currentPlayer = playerTwo_X
-    } else {
-      currentPlayer = playerOne_O
-    }
+    currentPlayer = currentPlayer === playerOne_O ? playerTwo_X : playerOne_O;
+    if(count === 9){
+      gameText.innerText = `Draw`
+  }
   }
 };
 
@@ -94,18 +98,17 @@ const playerWins = () => {
 };
 // for each index in your boardSpaces array set it to empty, set all boxes innerText to empty, and restore gameText
 const restart = () => {
-  boardSpaces.forEach((space, index) => {
-    boardSpaces[index] = '';
-  })
+  boardSpaces = [];
+  count = 0;
   boxes.forEach(box => {
-    box.innerText = '';
+    box.innerText = "";
   })
-  gameText.innerText = `Lets Get Started!`;
+  gameText.innerText = `Lets Get Started!`
   currentPlayer = playerOne_O
+
 }
 
 restartButton.addEventListener('click', restart)
 
-// call restart and createBoardLines functions 
 restart();
 createBoardLines();

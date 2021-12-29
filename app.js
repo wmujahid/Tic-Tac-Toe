@@ -9,8 +9,8 @@ const restartButton = document.getElementById('restartButton')
 let boardSpaces = ['', '', '', '', '', '', '', '', ''];
 
 // player 1 will be 'O' and player 2 will be 'X'
-const playerOne_O = "O";
-const playerTwo_X = "X";
+const playerOne_O = "🦶";
+const playerTwo_X = "📌";
 
 // starting player will be player 1
 let currentPlayer;

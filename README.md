@@ -4,7 +4,7 @@
 No need.
 
 ## Links:
-![](images/Add a heading.png)
+- [Wireframe](images/wireframe.png)
 
 - [Game link](https://zen-golick-e6325c.netlify.app/).
 

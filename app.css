@@ -25,6 +25,7 @@ h1 {
   justify-content: center;
   align-items: center;
   color: black;
+  font-size: 150px;
 }
 
 /* accounts for the border and padding within the height and width of every element */

@@ -36,7 +36,13 @@ const boxClicked = (event) => {
   const id = event.target.id
   if (boardSpaces[id] === '') {
     boardSpaces[id] = currentPlayer;
-    event.target.innerHTML = currentPlayer
+    event.target.innerHTML = currentPlayer;
+    // after a box is clicked if the current player is X switch it to O and vice versa
+    if (currentPlayer === playerOne_O) {
+      currentPlayer = playerTwo_X
+    } else {
+      currentPlayer = playerOne_O
+    }
   }
 }
 
